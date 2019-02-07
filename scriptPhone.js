@@ -1,10 +1,11 @@
-var two = ['a','b','c'];
-var three = ['d','e','f'];
+var _2 = ['a','b','c'];
+var _3 = ['d','e','f'];
 
-two.length
-three.length
+var userEntry = prompt("What is your phone number?");
 
-// name is which digit we are looking at (ex: two)
+// _2.length = 3
+
+// name is which digit we are looking at (ex: 2)
 // function will list all letters associated with that digit
 function letterList(name){
 	counter2 = 0
@@ -13,4 +14,29 @@ function letterList(name){
 		counter2++;
 	}
 }
+
+// name is what we are looking at (ex: userEntry = '234')
+// function will create newUserArray with format: ['_2', '_3', '_4']
+var newUserArray = [];
+function createArray(name){
+	counter2 = 0
+	while (counter2 < name.length){
+		newUserArray[counter2] = "_" + name[counter2];
+		console.log(newUserArray[counter2]);
+		counter2++;
+	}
+}
+
+// // name is which digit we are looking at (ex: 2)
+// // function will list all letters associated with that digit
+// function convertList(name){
+// 	counter2 = 0
+// 	while (counter2 < name.length){
+// 		name[counter2] = "_" + name[counter2];
+// 		console.log(name[counter2]);
+// 		counter2++;
+// 	}
+// }
+
+
 
