@@ -1,3 +1,4 @@
+var _0 = [''];
 var _1 = [''];
 var _2 = ['a', 'b', 'c'];
 var _3 = ['d', 'e', 'f'];
@@ -72,32 +73,77 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 }
 
 // name is what we are looking at (ex: userEntry = '234')
-// function will create newUserArray with format: ['_2', '_3', '_4']
+// function will create newUserArray with format??
 var newUserArray = [];
 function createArray(name){
 	counter2 = 0
 	while (counter2 < name.length){
-		newUserArray[counter2] = "_" + name[counter2];
+		// newUserArray[counter2] = "_" + name[counter2];
+		if (name[counter2] === "2"){
+			// newUserArray[i] = ['a','b','c']
+			newUserArray[counter2] = [_2];
+		} else if (newUserArray[counter2] === "_3"){
+			newUserArray[counter2] = [_3];
+		}
 		console.log(newUserArray[counter2]);
 		counter2++;
 	}
 }
 
-createArray(userEntry); // new array is newUserArray
 
+// creates new array with letters for each number (newUserArray)
 function numToLetters(name){
 	i = 0
 	while (i < name.length){
-		if (newUserArray[i] === "_2"){
-			// newUserArray[i] = ['a','b','c']
-			newUserArray[i] = [_2]
+		if (name[i] === "_0"){
+			newUserArray[i] = [_0];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_1"){
+			newUserArray[i] = [_1];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_2"){
+			newUserArray[i] = [_2];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_3"){
+			newUserArray[i] = [_3];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_4"){
+			newUserArray[i] = [_4];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_5"){
+			newUserArray[i] = [_5];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_6"){
+			newUserArray[i] = [_6];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_7"){
+			newUserArray[i] = [_7];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_8"){
+			newUserArray[i] = [_8];
+			console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_9"){
+			newUserArray[i] = [_9];
+			console.log(newUserArray);
+			i++;
+		} else {
+			newUserArray[i] = [_0];
+			console.log(newUserArray);
+			i++;
 		}
-		console.log(name[i]);
-		i++;
 	}
 }
 
-// }
+// }ß
 // if (newUserArray[i] === "_2"){
 //     newUserArray[i] = ['a','b','c']}
 
@@ -112,5 +158,17 @@ function numToLetters(name){
 // 	}
 // }
 
+// name is what we are looking at (ex: userEntry = '234')
+// function will create newUserArray2 with format: ['_2', '_3', '_4']
+var newUserArray2 = [];
+function createArray2(name){
+	counter2 = 0
+	while (counter2 < name.length){
+		newUserArray2[counter2] = "_" + name[counter2];
+		console.log(newUserArray2[counter2]);
+		counter2++;
+	}
+}
 
-
+createArray2(userEntry); // new array is newUserArray2
+numToLetters(newUserArray2); // new array is newUserArray
