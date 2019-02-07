@@ -10,28 +10,62 @@ var _9 = ['w','x','y','z'];
 
 var list = [];
 
-// var userEntry = prompt("What is your phone number?");
+var userEntry = prompt("What is your phone number?");
 
 // _2.length = 3
 
 // name is which digit we are looking at (ex: 2)
 // function will list all letters associated with that digit
-function letterList(name1, name2, name3){
+function letterList(name1, name2, name3, name4, name5, name6, name7){
 	list=[];
 	counter1 = 0;
 	counter2 = 0;
 	counter3 = 0;
-	while (counter3 < name3.length){
-		while (counter2 < name2.length){
-			while (counter1 < name1.length){
-				console.log(name1[counter1]+name2[counter2]+name3[counter3]);
-				list.push(name1[counter1]+name2[counter2]+name3[counter3]);
-				counter1++;
+	counter4 = 0;
+	counter5 = 0;
+	counter6 = 0;
+	counter7 = 0;
+	while (counter7 < name7.length){
+		while (counter6 < name6.length){
+			while (counter5 < name5.length){
+				while (counter4 < name4.length){
+					while (counter3 < name3.length){
+						while (counter2 < name2.length){
+							while (counter1 < name1.length){
+								console.log(name1[counter1]+name2[counter2]+name3[counter3]+name4[counter4]+name5[counter5]+name6[counter6]+name7[counter7]);
+								list.push(name1[counter1]+name2[counter2]+name3[counter3]+name4[counter4]+name5[counter5]+name6[counter6]+name7[counter7]);
+								counter1++;
+							}
+							counter2++;
+							counter1=0;
+						}
+						counter3++;
+						counter2=0;
+						counter1=0;
+					}
+					counter4++;
+					counter3=0;
+					counter2=0;
+					counter1=0;
+				}
+				counter5++;
+				counter4=0;
+				counter3=0;
+				counter2=0;
+				counter1=0;
 			}
-			counter2++;
-			counter1 = 0;
+			counter6++;
+			counter5=0;
+			counter4=0;
+			counter3=0;
+			counter2=0;
+			counter1=0;
 		}
-		counter3++;
+		counter7++;
+		counter6=0;
+		counter5=0;
+		counter4=0;
+		counter3=0;
 		counter2=0;
 		counter1=0;
 	}
