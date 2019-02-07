@@ -1,8 +1,14 @@
-var _2 = ['a','b','c'];
-var _3 = ['d','e','f'];
-var _4 = ['g','h','i'];
+var _1 = [''];
+var _2 = ['a', 'b', 'c'];
+var _3 = ['d', 'e', 'f'];
+var _4 = ['g', 'h', 'i'];
+var _5 = ['j', 'k', 'l'];
+var _6 = ['m', 'n', 'o'];
+var _7 = ['p', 'q', 'r', 's'];
+var _8 = ['t', 'u', 'v'];
+var _9 = ['w','x','y','z'];
 
-
+var list = [];
 
 // var userEntry = prompt("What is your phone number?");
 
@@ -11,6 +17,7 @@ var _4 = ['g','h','i'];
 // name is which digit we are looking at (ex: 2)
 // function will list all letters associated with that digit
 function letterList(name1, name2, name3){
+	list=[];
 	counter1 = 0;
 	counter2 = 0;
 	counter3 = 0;
@@ -18,6 +25,7 @@ function letterList(name1, name2, name3){
 		while (counter2 < name2.length){
 			while (counter1 < name1.length){
 				console.log(name1[counter1]+name2[counter2]+name3[counter3]);
+				list.push(name1[counter1]+name2[counter2]+name3[counter3]);
 				counter1++;
 			}
 			counter2++;
