@@ -33,7 +33,7 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 					while (counter3 < name3.length){
 						while (counter2 < name2.length){
 							while (counter1 < name1.length){
-								console.log(name1[counter1]+name2[counter2]+name3[counter3]+name4[counter4]+name5[counter5]+name6[counter6]+name7[counter7]);
+								// console.log(name1[counter1]+name2[counter2]+name3[counter3]+name4[counter4]+name5[counter5]+name6[counter6]+name7[counter7]);
 								list.push(name1[counter1]+name2[counter2]+name3[counter3]+name4[counter4]+name5[counter5]+name6[counter6]+name7[counter7]);
 								counter1++;
 							}
@@ -75,20 +75,20 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 // name is what we are looking at (ex: userEntry = '234')
 // function will create newUserArray with format??
 var newUserArray = [];
-function createArray(name){
-	counter2 = 0
-	while (counter2 < name.length){
-		// newUserArray[counter2] = "_" + name[counter2];
-		if (name[counter2] === "2"){
-			// newUserArray[i] = ['a','b','c']
-			newUserArray[counter2] = [_2];
-		} else if (newUserArray[counter2] === "_3"){
-			newUserArray[counter2] = [_3];
-		}
-		console.log(newUserArray[counter2]);
-		counter2++;
-	}
-}
+// function createArray(name){
+// 	counter2 = 0
+// 	while (counter2 < name.length){
+// 		// newUserArray[counter2] = "_" + name[counter2];
+// 		if (name[counter2] === "2"){
+// 			// newUserArray[i] = ['a','b','c']
+// 			newUserArray[counter2] = [_2];
+// 		} else if (newUserArray[counter2] === "_3"){
+// 			newUserArray[counter2] = [_3];
+// 		}
+// 		console.log(newUserArray[counter2]);
+// 		counter2++;
+// 	}
+// }
 
 
 // creates new array with letters for each number (newUserArray)
@@ -97,47 +97,47 @@ function numToLetters(name){
 	while (i < name.length){
 		if (name[i] === "_0"){
 			newUserArray[i] = [_0];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_1"){
 			newUserArray[i] = [_1];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_2"){
 			newUserArray[i] = [_2];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_3"){
 			newUserArray[i] = [_3];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_4"){
 			newUserArray[i] = [_4];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_5"){
 			newUserArray[i] = [_5];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_6"){
 			newUserArray[i] = [_6];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_7"){
 			newUserArray[i] = [_7];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_8"){
 			newUserArray[i] = [_8];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else if (name[i] === "_9"){
 			newUserArray[i] = [_9];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		} else {
 			newUserArray[i] = [_0];
-			console.log(newUserArray);
+			// console.log(newUserArray);
 			i++;
 		}
 	}
@@ -162,13 +162,82 @@ function numToLetters(name){
 // function will create newUserArray2 with format: ['_2', '_3', '_4']
 var newUserArray2 = [];
 function createArray2(name){
-	counter2 = 0
+	counter2 = 0;
 	while (counter2 < name.length){
 		newUserArray2[counter2] = "_" + name[counter2];
-		console.log(newUserArray2[counter2]);
+		// console.log(newUserArray2[counter2]);
 		counter2++;
 	}
 }
 
 createArray2(userEntry); // new array is newUserArray2
 numToLetters(newUserArray2); // new array is newUserArray
+
+newUserArray.length;
+
+function simplifyArray (name){
+	var simpleArray = [];
+	i = 0;
+	while (i < name.length){
+		simpleArray[i] = name[i][0];
+		// console.log(simpleArray);
+		i++;
+	}
+	return simpleArray;
+}
+
+var letterMatrix = simplifyArray(newUserArray);
+letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
+
+console.log(list);
+
+function getVowels(str) {
+  var m = str.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}
+
+
+// // create array with vowel count of each letter combo
+// i = 0; 
+// var vowelCount=[];
+// 	while (i < list.length){
+//         vowelCount[i] = getVowels(list[i]);
+//         i++;
+//     }
+
+
+
+// var keys = list;
+// var values = vowelCount;
+
+// var keys = vowelCount;
+// var values = list;
+
+// var result = {};
+// keys.forEach((key, i) => result[key] = values[i]);
+// console.log(result);
+
+
+
+// something else
+var hasVowels = [];
+i=0;
+while (i < list.length){
+if (getVowels(list[i]) > 0) {
+    hasVowels[i]=list[i];
+}
+i++;
+}
+
+// ugh
+function isBigEnough(value) {
+  // return value >= 10;
+  return (getVowels(value) > 0);
+}
+
+var filtered = list.filter(isBigEnough);
+// filtered is [12, 130, 44]
+
+
+
+
