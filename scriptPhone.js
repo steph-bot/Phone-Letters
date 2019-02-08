@@ -191,6 +191,8 @@ letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],letterMatrix[3],lette
 
 console.log(list);
 
+
+// counts number of vowels in a string and returns it
 function getVowels(str) {
   var m = str.match(/[aeiou]/gi);
   return m === null ? 0 : m.length;
@@ -219,15 +221,17 @@ function getVowels(str) {
 
 
 
-// something else
-var hasVowels = [];
-i=0;
-while (i < list.length){
-if (getVowels(list[i]) > 0) {
-    hasVowels[i]=list[i];
-}
-i++;
-}
+// // trying to create an array with strings that have at least one vowel
+// // problem is the array length is still same (leaves blank spaces when
+// // there are no vowels)
+// var hasVowels = [];
+// i=0;
+// while (i < list.length){
+// if (getVowels(list[i]) > 0) { // if string has one or more vowels..
+//     hasVowels[i]=list[i];	  // add it to the array
+// }
+// i++;
+// }
 
 // ugh
 function isBigEnough(value) {
@@ -236,8 +240,17 @@ function isBigEnough(value) {
 }
 
 var filtered = list.filter(isBigEnough);
-// filtered is [12, 130, 44]
+
+console.log(filtered);
 
 
-
+// form validation for numbers
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
 

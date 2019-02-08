@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phone Letters</title>
+	
+	<!-- from Bootstrap website -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> 
+	<!-- to make Bootstrap responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- end Bootstrap -->
+	
+  	<!-- my style sheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+
+<!-- Bootstrap navbar -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Stephbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+<!--       <li class="nav-item">
+        <a class="nav-link" href="https://youtu.be/ycPr5-27vSI" target="_blank">Watch</a>
+      </li> -->
+
+<!--       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Elon_Musk" target="_blank">Elon Wiki</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Joe_Rogan" target="_blank">Rogan Wiki</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.boringcompany.com/not-a-flamethrower/" target="_blank">Terrible Idea</a>
+        </div>
+      </li> -->
+      
+    </ul>
+  </div>
+</nav>
+<!-- End of Bootstrap navbar -->
+
+
+
+<!-- Bootstrap jumbotron -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Alphanumeric Phone Number</h1>
+    <p class="lead">Find all the possible letter combinations for a particular phone number</p>
+  </div>
+</div>
+<!-- End of Bootstrap jumbotron -->
+
+
+
+<!-- start vertical navbar for transcript -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="d-none d-sm-block col-sm-3">
+      <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column">
+        <a class="navbar-brand" href="#">Jump to:</a>
+        
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#item-1">Intro</a>
+          
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-1-1">Flamethrowers</a>
+            <a class="nav-link" href="#item-1-2">Digging Holes</a>
+          </nav>
+          
+          <a class="nav-link" href="#item-2">Existential Pit</a>
+          <a class="nav-link" href="#item-3">Time Management</a>
+          <a class="nav-link" href="#item-4">Summary</a>
+            
+          </nav>
+        </nav>
+      </nav>
+    </div> -->
+<!-- end vertical navbar for transcript -->
+
+
+
+
+<!-- start transcript text column -->
+    <div class="col anyClass">
+      <div>
+        <h4 id="item-1">Introduction</h4>
+        <p>
+        JR: 4, 3, 2, 1, boom! Thank you, thanks for doing this man. I really appreciate it. Very good to meet you.<br>
+        <br>
+        EM: You're welcome, nice to meet you too.<br>
+        <br>
+        JR: Thanks for not lighting this place on fire.<br>
+        <br>
+        EM: You're welcome.<br><br>
+        </p>
+
+
+
+
+
+
+<form>
+  <div class="row justify-content-center">
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X" onkeypress="return isNumber(event)">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+    <div class="col-1">
+      <input type="text" readonly class="form-control-plaintext" placeholder="-">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+    <div class="col-1">
+      <input type="text" class="form-control" placeholder="X">
+    </div>
+
+  </div>
+</form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end transcript text column -->
+
+
+
+<script src="scriptPhone.js"></script>
+
+<!-- from Bootstrap website for end of <body> -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>

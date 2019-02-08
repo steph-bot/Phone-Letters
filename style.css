@@ -1,0 +1,29 @@
+/*.col {
+	background-color: orange;
+	border: 2px solid;
+}*/
+
+/*body {
+	position: relative;
+}*/
+
+.anyClass {
+	position: relative;
+	height:calc(100vh - 100px);
+	/*overflow-y: scroll;*/
+}
+
+.jumbotron {
+	/*background:linear-gradient(to right, rgb(5, 81, 159), rgb(126, 190, 144));*/
+	/*background:linear-gradient(to right, rgb(198, 6, 46), rgb(202, 200, 9));*/
+	background:linear-gradient(to right, rgb(3, 132, 198), rgb(202, 200, 9));
+
+}
+
+.form-control-plaintext {
+	text-align: center;
+}
+
+.form-control {
+	text-align: center;
+} 
