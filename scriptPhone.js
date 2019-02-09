@@ -1,3 +1,33 @@
+
+/*---------------------------------------------------------------------------*\
+  # CACHE SELECTORS
+\*---------------------------------------------------------------------------*/
+
+var digit1; 
+var digit2;
+var digit3;
+var digit4;
+var digit5;
+var digit6;
+var digit7;
+var button = document.getElementById("btn"); // submit button
+
+// when form submits, cache value of each phone digit
+function formSubmit() {
+	digit1 = document.getElementsByName("digit1")[0].value;
+	digit2 = document.getElementsByName("digit2")[0].value;
+	digit3 = document.getElementsByName("digit3")[0].value;
+	digit4 = document.getElementsByName("digit4")[0].value;
+	digit5 = document.getElementsByName("digit5")[0].value;
+	digit6 = document.getElementsByName("digit6")[0].value;
+	digit7 = document.getElementsByName("digit7")[0].value;
+	userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+}
+
+// click submit button
+button.addEventListener("click", formSubmit);
+
+
 var _0 = [''];
 var _1 = [''];
 var _2 = ['a', 'b', 'c'];
@@ -11,7 +41,9 @@ var _9 = ['w','x','y','z'];
 
 var list = [];
 
-var userEntry = prompt("What is your phone number?");
+var userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+
+// var userEntry = prompt("What is your phone number?");
 
 // _2.length = 3
 
@@ -245,6 +277,7 @@ console.log(filtered);
 
 
 // form validation for numbers
+// allows numbers only to be entered into form
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;

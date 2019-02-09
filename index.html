@@ -63,36 +63,11 @@
 
 
 
-<!-- start vertical navbar for transcript -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="d-none d-sm-block col-sm-3">
-      <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column">
-        <a class="navbar-brand" href="#">Jump to:</a>
-        
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-link" href="#item-1">Intro</a>
-          
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link" href="#item-1-1">Flamethrowers</a>
-            <a class="nav-link" href="#item-1-2">Digging Holes</a>
-          </nav>
-          
-          <a class="nav-link" href="#item-2">Existential Pit</a>
-          <a class="nav-link" href="#item-3">Time Management</a>
-          <a class="nav-link" href="#item-4">Summary</a>
-            
-          </nav>
-        </nav>
-      </nav>
-    </div> -->
-<!-- end vertical navbar for transcript -->
-
 
 
 
 <!-- start transcript text column -->
-    <div class="col anyClass">
+<!--     <div class="col anyClass">
       <div>
         <h4 id="item-1">Introduction</h4>
         <p>
@@ -104,26 +79,23 @@
         <br>
         EM: You're welcome.<br><br>
         </p>
-
-
-
+ -->
 
 
 
 <form>
   <div class="row justify-content-center">
     
-
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit1" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit2" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit3" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
@@ -131,36 +103,30 @@
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit4" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit5" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit6" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
     <div class="col-1">
-      <input type="text" class="form-control" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
+      <input type="text" class="form-control" name="digit7" placeholder=" " maxlength="1" onkeypress="return isNumber(event)">
     </div>
 
+    <!-- use type = "button" to keep page from refreshing -->
     <div class="col-1">
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      <button type="button" class="btn btn-primary mb-2" id="btn">Submit</button>
     </div>
 
 
   </div>
-
-
-
 </form>
-        
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- end transcript text column -->
 
