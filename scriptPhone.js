@@ -2,7 +2,6 @@
 /*---------------------------------------------------------------------------*\
   # CACHE SELECTORS
 \*---------------------------------------------------------------------------*/
-
 var digit1; 
 var digit2;
 var digit3;
@@ -10,24 +9,10 @@ var digit4;
 var digit5;
 var digit6;
 var digit7;
+var userEntry;
 var button = document.getElementById("btn"); // submit button
 
-// when form submits, cache value of each phone digit
-function formSubmit() {
-	digit1 = document.getElementsByName("digit1")[0].value;
-	digit2 = document.getElementsByName("digit2")[0].value;
-	digit3 = document.getElementsByName("digit3")[0].value;
-	digit4 = document.getElementsByName("digit4")[0].value;
-	digit5 = document.getElementsByName("digit5")[0].value;
-	digit6 = document.getElementsByName("digit6")[0].value;
-	digit7 = document.getElementsByName("digit7")[0].value;
-	userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
-}
-
-// click submit button
-button.addEventListener("click", formSubmit);
-
-
+// DEFINE VARS
 var _0 = [''];
 var _1 = [''];
 var _2 = ['a', 'b', 'c'];
@@ -40,15 +25,36 @@ var _8 = ['t', 'u', 'v'];
 var _9 = ['w','x','y','z'];
 
 var list = [];
+var newUserArray2 = [];
+var newUserArray = [];
 
-var userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+var letterMatrix = [];
 
-// var userEntry = prompt("What is your phone number?");
 
-// _2.length = 3
+// FUNCTION DECLARATION
+// form validation for numbers
+// allows numbers only to be entered into form
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
 
+
+// // FUNCTION CALL
+// // click submit button
+// button.addEventListener("click", formSubmit);
+
+
+
+
+
+// FUNCTION DECLARATION
+// function will list all letters associated with each digit
 // name is which digit we are looking at (ex: 2)
-// function will list all letters associated with that digit
 function letterList(name1, name2, name3, name4, name5, name6, name7){
 	list=[];
 	counter1 = 0;
@@ -104,25 +110,25 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 	}
 }
 
+
+
+
+
+
+
+// FUNCTION DECLARATION
 // name is what we are looking at (ex: userEntry = '234')
-// function will create newUserArray with format??
-var newUserArray = [];
-// function createArray(name){
-// 	counter2 = 0
-// 	while (counter2 < name.length){
-// 		// newUserArray[counter2] = "_" + name[counter2];
-// 		if (name[counter2] === "2"){
-// 			// newUserArray[i] = ['a','b','c']
-// 			newUserArray[counter2] = [_2];
-// 		} else if (newUserArray[counter2] === "_3"){
-// 			newUserArray[counter2] = [_3];
-// 		}
-// 		console.log(newUserArray[counter2]);
-// 		counter2++;
-// 	}
-// }
+// function will create newUserArray2 with format: ['_2', '_3', '_4']
+function createArray2(name){
+	counter2 = 0;
+	while (counter2 < name.length){
+		newUserArray2[counter2] = "_" + name[counter2];
+		// console.log(newUserArray2[counter2]);
+		counter2++;
+	}
+}
 
-
+// FUNCTION DECLARATION
 // creates new array with letters for each number (newUserArray)
 function numToLetters(name){
 	i = 0
@@ -175,38 +181,47 @@ function numToLetters(name){
 	}
 }
 
-// }ß
-// if (newUserArray[i] === "_2"){
-//     newUserArray[i] = ['a','b','c']}
 
-// // name is which digit we are looking at (ex: 2)
-// // function will list all letters associated with that digit
-// function convertList(name){
-// 	counter2 = 0
-// 	while (counter2 < name.length){
-// 		name[counter2] = "_" + name[counter2];
-// 		console.log(name[counter2]);
-// 		counter2++;
-// 	}
-// }
 
-// name is what we are looking at (ex: userEntry = '234')
-// function will create newUserArray2 with format: ['_2', '_3', '_4']
-var newUserArray2 = [];
-function createArray2(name){
-	counter2 = 0;
-	while (counter2 < name.length){
-		newUserArray2[counter2] = "_" + name[counter2];
-		// console.log(newUserArray2[counter2]);
-		counter2++;
-	}
+
+// FUNCTION DECLARATION
+// when form submits, cache value of each phone digit
+function formSubmit() {
+	digit1 = document.getElementsByName("digit1")[0].value;
+	digit2 = document.getElementsByName("digit2")[0].value;
+	digit3 = document.getElementsByName("digit3")[0].value;
+	digit4 = document.getElementsByName("digit4")[0].value;
+	digit5 = document.getElementsByName("digit5")[0].value;
+	digit6 = document.getElementsByName("digit6")[0].value;
+	digit7 = document.getElementsByName("digit7")[0].value;
+	userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+	// FUNCTION CALLS:
+	createArray2(userEntry); // new array is newUserArray2
+	numToLetters(newUserArray2); // new array is newUserArray
+
+
+	// FUNCTION CALL
+	letterMatrix = simplifyArray(newUserArray);
+	letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
+
+	console.log(list);
+
+
+
 }
 
-createArray2(userEntry); // new array is newUserArray2
-numToLetters(newUserArray2); // new array is newUserArray
 
-newUserArray.length;
 
+// FUNCTION CALL
+// click submit button
+button.addEventListener("click", formSubmit);
+
+
+// newUserArray.length;
+
+
+
+// FUNCTION DECLARATION
 function simplifyArray (name){
 	var simpleArray = [];
 	i = 0;
@@ -218,12 +233,11 @@ function simplifyArray (name){
 	return simpleArray;
 }
 
-var letterMatrix = simplifyArray(newUserArray);
-letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
-
-console.log(list);
 
 
+
+
+// FUNCTION DECLARATION
 // counts number of vowels in a string and returns it
 function getVowels(str) {
   var m = str.match(/[aeiou]/gi);
@@ -231,59 +245,23 @@ function getVowels(str) {
 }
 
 
-// // create array with vowel count of each letter combo
-// i = 0; 
-// var vowelCount=[];
-// 	while (i < list.length){
-//         vowelCount[i] = getVowels(list[i]);
-//         i++;
-//     }
 
-
-
-// var keys = list;
-// var values = vowelCount;
-
-// var keys = vowelCount;
-// var values = list;
-
-// var result = {};
-// keys.forEach((key, i) => result[key] = values[i]);
-// console.log(result);
-
-
-
-// // trying to create an array with strings that have at least one vowel
-// // problem is the array length is still same (leaves blank spaces when
-// // there are no vowels)
-// var hasVowels = [];
-// i=0;
-// while (i < list.length){
-// if (getVowels(list[i]) > 0) { // if string has one or more vowels..
-//     hasVowels[i]=list[i];	  // add it to the array
-// }
-// i++;
-// }
-
+// FUNCTION DECLARATION
 // ugh
 function isBigEnough(value) {
-  // return value >= 10;
   return (getVowels(value) > 0);
 }
 
+// FUNCTION CALL
 var filtered = list.filter(isBigEnough);
 
 console.log(filtered);
 
 
-// form validation for numbers
-// allows numbers only to be entered into form
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
+
+
+
+
+
+
 
