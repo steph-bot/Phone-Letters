@@ -235,8 +235,6 @@ function simplifyArray (name){
 
 
 
-
-
 // FUNCTION DECLARATION
 // counts number of vowels in a string and returns it
 function getVowels(str) {
