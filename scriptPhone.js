@@ -1,3 +1,8 @@
+// issues to work out:
+// - allows for submission with missing digits. leads to inaccurate results!
+//	 esp after a full number has been submitted, followed by an incomplete
+
+
 
 /*---------------------------------------------------------------------------*\
   # CACHE SELECTORS
