@@ -1,25 +1,28 @@
 // issues to work out:
+//
 // - allows for submission with missing digits. leads to inaccurate results!
 //	 esp after a full number has been submitted, followed by an incomplete
+// 
+// - should i use blank spaces " " for zero? or leave out, using ""?
 
 
 
 /*---------------------------------------------------------------------------*\
   # CACHE SELECTORS
 \*---------------------------------------------------------------------------*/
-var digit1; 
-var digit2;
-var digit3;
-var digit4;
-var digit5;
-var digit6;
-var digit7;
-var userEntry;
+var digit1; // user entered digit #1
+var digit2; //					  #2
+var digit3; //					  #3
+var digit4; //					  #4
+var digit5; //					  #5
+var digit6; //					  #6
+var digit7; //					  #7
+var userEntry; // user entered phone number as a string ex: "3308004"
 var button = document.getElementById("btn"); // submit button
 
 // DEFINE VARS
-var _0 = [''];
-var _1 = [''];
+var _0 = [' '];
+var _1 = [' '];
 var _2 = ['a', 'b', 'c'];
 var _3 = ['d', 'e', 'f'];
 var _4 = ['g', 'h', 'i'];
@@ -30,8 +33,11 @@ var _8 = ['t', 'u', 'v'];
 var _9 = ['w','x','y','z'];
 
 var list = [];
-var newUserArray2 = [];
-var newUserArray = [];
+
+// phone number array ex: ["_3", "_3", "_0", "_8", "_0", "_0", "_4"]
+var newUserArray2 = []; 
+
+var newUserArray = []; // phone number array of letters
 
 var letterMatrix = [];
 
