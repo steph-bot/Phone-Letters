@@ -34,7 +34,7 @@ var ul = document.querySelectorAll("ul")[1]; // select unordered list
 
 // define letters for each digit
 var _0 = ['0'];
-var _1 = [' '];
+var _1 = ['1'];
 var _2 = ['a', 'b', 'c'];
 var _3 = ['d', 'e', 'f'];
 var _4 = ['g', 'h', 'i'];
