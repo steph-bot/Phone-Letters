@@ -225,7 +225,7 @@ function createListElement(){
 	// create list element
 	var li = document.createElement("li");
 	// add text to list element (user input)
-	li.appendChild(document.createTextNode("entry"+userEntry));
+	li.appendChild(document.createTextNode(list.length+" entries"));
 	// append li to unordered list
 	ul.appendChild(li);
 
@@ -237,6 +237,7 @@ function createListElement(){
 	while (i < list.length){
 		var li = document.createElement("li");
 		li.appendChild(document.createTextNode(list[i]));
+		li.classList.add("listItem");
 		ul.appendChild(li);
 		i++;
 	}
