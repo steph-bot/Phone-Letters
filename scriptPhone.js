@@ -13,15 +13,7 @@
 /*---------------------------------------------------------------------------*\
   # CACHE SELECTORS
 \*---------------------------------------------------------------------------*/
-// var digit1; // user entered digit #1
-// var digit2; //					  #2
-// var digit3; //					  #3
-// var digit4; //					  #4
-// var digit5; //					  #5
-// var digit6; //					  #6
-// var digit7; //					  #7
 
-// correct way
 var	digit1a = document.getElementsByName("digit1")[0]; // user entry digit #1
 var	digit2a = document.getElementsByName("digit2")[0]; //				   #2
 var	digit3a = document.getElementsByName("digit3")[0]; //				   #3
@@ -230,7 +222,24 @@ function createListElement(){
 	// create list element
 	var li = document.createElement("li");
 	// add text to list element (user input)
-	li.appendChild(document.createTextNode(userEntry));
+	li.appendChild(document.createTextNode("entry"+userEntry));
+	// append li to unordered list
+	ul.appendChild(li);
+
+	// var li = document.createElement("li");
+	// li.appendChild(document.createTextNode(list));
+	// ul.appendChild(li);
+
+	i = 0;
+	while (i < list.length){
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(list[i]));
+		ul.appendChild(li);
+		i++;
+	}
+
+
+
 
 	// // create button element
 	// var newButton = document.createElement("BUTTON");
@@ -245,7 +254,7 @@ function createListElement(){
 	// li.appendChild(newButton);
 
 	// append li to unordered list
-	ul.appendChild(li);
+	// ul.appendChild(li);
 
 	// reset form to blank value
 	// input.value="";
@@ -266,12 +275,17 @@ function clearForm(){
 // NOT WORKING????
 // moves cursor to input box
 function cursor(){
-	// digit1a.focus();
-	digit1a.select();
-	digit1a.focus({preventScroll:true});
+	// // digit1a.focus();
+	// digit1a.select();
+	// digit1a.focus({preventScroll:true});
+
+
+	//THISSSSS WORKS IF VAL ALREADY THERE IN BOX
+// document.getElementById('digit1').select()
+	document.getElementsByName("digit1")[0].select()
+	document.getElementsByName("digit1")[0].focus({preventScroll:true});
 	
 }
-
 
 
 
@@ -280,31 +294,9 @@ function cursor(){
 // when form submits, create list of letter combos from user entry 
 function formSubmit() {
 
-	// // cache value of each phone digit
-	// digit1 = document.getElementsByName("digit1")[0].value;
-	// digit2 = document.getElementsByName("digit2")[0].value;
-	// digit3 = document.getElementsByName("digit3")[0].value;
-	// digit4 = document.getElementsByName("digit4")[0].value;
-	// digit5 = document.getElementsByName("digit5")[0].value;
-	// digit6 = document.getElementsByName("digit6")[0].value;
-	// digit7 = document.getElementsByName("digit7")[0].value;
-	// userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
-	
-		// cache value of each phone digit
-	// digit1 = digit1a.value;
-	// digit2 = digit2a.value;
-	// digit3 = digit3a.value;
-	// digit4 = digit4a.value;
-	// digit5 = digit5a.value;
-	// digit6 = digit6a.value;
-	// digit7 = digit7a.value;
-	userEntry = digit1a.value
-	+digit2a.value
-	+digit3a.value
-	+digit4a.value
-	+digit5a.value
-	+digit6a.value
-	+digit7a.value;
+	userEntry = digit1a.value + digit2a.value + digit3a.value
+			  + digit4a.value + digit5a.value + digit6a.value
+			  + digit7a.value;
 
 
 
@@ -318,6 +310,10 @@ function formSubmit() {
 		letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
 
 	console.log(list);
+
+	createListElement();
+
+	cursor();
 
 
 
