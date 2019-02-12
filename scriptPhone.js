@@ -7,7 +7,10 @@
 // - - " " 	blank spaces " " for zero
 // - - ""	leave out, using ""
 // - - "0"	ones and zeroes
-
+//
+// - add reference to original problem ask
+// 
+// - fix focus() situation
 
 
 /*---------------------------------------------------------------------------*\
@@ -360,6 +363,6 @@ console.log(filtered);
 
 
 
-
+cursor();
 
 

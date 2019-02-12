@@ -27,3 +27,28 @@
 .form-control {
 	text-align: center;
 } 
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+li {
+	/*padding: 1px;*/
+	margin: 9px;
+
+	  /*width: 23%;*/
+  height: 49px;
+  margin: 1px 1%;
+  text-align: center;
+  background: #069;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
