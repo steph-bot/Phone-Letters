@@ -3,7 +3,10 @@
 // - allows for submission with missing digits. leads to inaccurate results!
 //	 esp after a full number has been submitted, followed by an incomplete
 // 
-// - should i use blank spaces " " for zero? or leave out, using ""?
+// - should i use:
+// - - " " 	blank spaces " " for zero
+// - - ""	leave out, using ""
+// - - "0"	ones and zeroes
 
 
 
@@ -17,11 +20,23 @@ var digit4; //					  #4
 var digit5; //					  #5
 var digit6; //					  #6
 var digit7; //					  #7
+
+// correct way
+	digit1a = document.getElementsByName("digit1")[0];
+	digit2a = document.getElementsByName("digit2")[0];
+	digit3a = document.getElementsByName("digit3")[0];
+	digit4a = document.getElementsByName("digit4")[0];
+	digit5a = document.getElementsByName("digit5")[0];
+	digit6a = document.getElementsByName("digit6")[0];
+	digit7a = document.getElementsByName("digit7")[0];
+
+
 var userEntry; // user entered phone number as a string ex: "3308004"
+
 var button = document.getElementById("btn"); // submit button
 
-// DEFINE VARS
-var _0 = [' '];
+// define letters for each digit
+var _0 = ['0'];
 var _1 = [' '];
 var _2 = ['a', 'b', 'c'];
 var _3 = ['d', 'e', 'f'];
@@ -32,14 +47,13 @@ var _7 = ['p', 'q', 'r', 's'];
 var _8 = ['t', 'u', 'v'];
 var _9 = ['w','x','y','z'];
 
-var list = [];
+var newUserArray2 = []; // phone number array 
+                        //ex: ["_3", "_3", "_0", "_8", "_0", "_0", "_4"]
 
-// phone number array ex: ["_3", "_3", "_0", "_8", "_0", "_0", "_4"]
-var newUserArray2 = []; 
+var newUserArray = []; // phone number [array of [array of letters]]
+var letterMatrix = []; // phone number array of letters
 
-var newUserArray = []; // phone number array of letters
-
-var letterMatrix = [];
+var list = []; // array of all letter combos 
 
 
 // FUNCTION DECLARATION
@@ -55,17 +69,102 @@ function isNumber(evt) {
 }
 
 
-// // FUNCTION CALL
-// // click submit button
-// button.addEventListener("click", formSubmit);
+
+
+
+
+
 
 
 
 
 
 // FUNCTION DECLARATION
-// function will list all letters associated with each digit
-// name is which digit we are looking at (ex: 2)
+// name is what we are looking at (ex: userEntry = '234')
+// function will create newUserArray2 with format: ['_2', '_3', '_4']
+function createArray2(name){
+	counter2 = 0;
+	while (counter2 < name.length){
+		newUserArray2[counter2] = "_" + name[counter2];
+		// console.log(newUserArray2[counter2]);
+		counter2++;
+	}
+}
+
+
+// FUNCTION DECLARATION
+// creates new array with letters for each number (newUserArray)
+function numToLetters(name){
+	i = 0
+	while (i < name.length){
+		if (name[i] === "_0"){
+			newUserArray[i] = [_0];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_1"){
+			newUserArray[i] = [_1];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_2"){
+			newUserArray[i] = [_2];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_3"){
+			newUserArray[i] = [_3];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_4"){
+			newUserArray[i] = [_4];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_5"){
+			newUserArray[i] = [_5];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_6"){
+			newUserArray[i] = [_6];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_7"){
+			newUserArray[i] = [_7];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_8"){
+			newUserArray[i] = [_8];
+			// console.log(newUserArray);
+			i++;
+		} else if (name[i] === "_9"){
+			newUserArray[i] = [_9];
+			// console.log(newUserArray);
+			i++;
+		} else {
+			newUserArray[i] = [_0];
+			// console.log(newUserArray);
+			i++;
+		}
+	}
+}
+
+
+// FUNCTION DECLARATION
+function simplifyArray (name){
+	var simpleArray = [];
+	i = 0;
+	while (i < name.length){
+		simpleArray[i] = name[i][0];
+		// console.log(simpleArray);
+		i++;
+	}
+	return simpleArray;
+}
+
+
+// FUNCTION DECLARATION
+// function will create list=[] of all letters combos for phone number
+// - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - 
+// name1 is which digit we are looking at (ex: 2)
+// input is each item of letterMatrix array (created from phone number)
+// output is list of all letters combos for phone number
 function letterList(name1, name2, name3, name4, name5, name6, name7){
 	list=[];
 	counter1 = 0;
@@ -124,80 +223,43 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 
 
 
+// wip wip wip
+var ul = document.querySelectorAll("ul")[1]; // shopping list
+// creates new list item and appends to bottom of list
+function createListElement(){
+	// create list element
+	var li = document.createElement("li");
+	// add text to list element (user input)
+	li.appendChild(document.createTextNode(userEntry.value));
 
+	// // create button element
+	// var newButton = document.createElement("BUTTON");
+	// // create text node (create button text)
+	// var t = document.createTextNode("delete");
+	// // Append the text to <button> (allows button to have text)
+	// newButton.appendChild(t); 
+	// // assign class to new btn
+	// newButton.classList.add("deleter");
 
+	// // append button to list element
+	// li.appendChild(newButton);
 
-// FUNCTION DECLARATION
-// name is what we are looking at (ex: userEntry = '234')
-// function will create newUserArray2 with format: ['_2', '_3', '_4']
-function createArray2(name){
-	counter2 = 0;
-	while (counter2 < name.length){
-		newUserArray2[counter2] = "_" + name[counter2];
-		// console.log(newUserArray2[counter2]);
-		counter2++;
-	}
-}
+	// append li to unordered list
+	ul.appendChild(li);
 
-// FUNCTION DECLARATION
-// creates new array with letters for each number (newUserArray)
-function numToLetters(name){
-	i = 0
-	while (i < name.length){
-		if (name[i] === "_0"){
-			newUserArray[i] = [_0];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_1"){
-			newUserArray[i] = [_1];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_2"){
-			newUserArray[i] = [_2];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_3"){
-			newUserArray[i] = [_3];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_4"){
-			newUserArray[i] = [_4];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_5"){
-			newUserArray[i] = [_5];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_6"){
-			newUserArray[i] = [_6];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_7"){
-			newUserArray[i] = [_7];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_8"){
-			newUserArray[i] = [_8];
-			// console.log(newUserArray);
-			i++;
-		} else if (name[i] === "_9"){
-			newUserArray[i] = [_9];
-			// console.log(newUserArray);
-			i++;
-		} else {
-			newUserArray[i] = [_0];
-			// console.log(newUserArray);
-			i++;
-		}
-	}
+	// reset form to blank value
+	input.value="";
 }
 
 
 
 
+
 // FUNCTION DECLARATION
-// when form submits, cache value of each phone digit
+// when form submits, create list of letter combos from user entry 
 function formSubmit() {
+
+	// cache value of each phone digit
 	digit1 = document.getElementsByName("digit1")[0].value;
 	digit2 = document.getElementsByName("digit2")[0].value;
 	digit3 = document.getElementsByName("digit3")[0].value;
@@ -206,14 +268,15 @@ function formSubmit() {
 	digit6 = document.getElementsByName("digit6")[0].value;
 	digit7 = document.getElementsByName("digit7")[0].value;
 	userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+	
 	// FUNCTION CALLS:
 	createArray2(userEntry); // new array is newUserArray2
 	numToLetters(newUserArray2); // new array is newUserArray
 
-
-	// FUNCTION CALL
 	letterMatrix = simplifyArray(newUserArray);
-	letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
+
+	letterList(letterMatrix[0],letterMatrix[1],letterMatrix[2],
+		letterMatrix[3],letterMatrix[4],letterMatrix[5],letterMatrix[6]);
 
 	console.log(list);
 
@@ -228,21 +291,12 @@ function formSubmit() {
 button.addEventListener("click", formSubmit);
 
 
+
 // newUserArray.length;
 
 
 
-// FUNCTION DECLARATION
-function simplifyArray (name){
-	var simpleArray = [];
-	i = 0;
-	while (i < name.length){
-		simpleArray[i] = name[i][0];
-		// console.log(simpleArray);
-		i++;
-	}
-	return simpleArray;
-}
+
 
 
 
