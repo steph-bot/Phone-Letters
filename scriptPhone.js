@@ -29,6 +29,8 @@ var	digit7a = document.getElementsByName("digit7")[0]; //				   #7
 var userEntry; // user entered phone number as a string ex: "3308004"
 
 var button = document.getElementById("btn"); // submit button
+var clearBtn = document.getElementById("clearBtn"); // clear button
+var ul = document.querySelectorAll("ul")[1]; // select unordered list
 
 // define letters for each digit
 var _0 = ['0'];
@@ -64,15 +66,13 @@ function isNumber(evt) {
 }
 
 
-
-
-
-
-
-
-
-
-
+// FUNCTION DECLARATION
+// moves cursor to input box
+function cursor(){
+	document.getElementsByName("digit1")[0].select()
+	document.getElementsByName("digit1")[0].focus({preventScroll:true});
+	
+}
 
 // FUNCTION DECLARATION
 // name is what we are looking at (ex: userEntry = '234')
@@ -219,54 +219,51 @@ function letterList(name1, name2, name3, name4, name5, name6, name7){
 
 
 // wip wip wip
-var ul = document.querySelectorAll("ul")[1]; // shopping list
+
 // creates new list item and appends to bottom of list
 function createListElement(){
 	// create list element
 	var li = document.createElement("li");
+
 	// add text to list element (user input)
 	li.appendChild(document.createTextNode(list.length+" entries"));
+
+	li.classList.add("entryCounter"); // add class to list item
+
 	// append li to unordered list
 	ul.appendChild(li);
-
-	// var li = document.createElement("li");
-	// li.appendChild(document.createTextNode(list));
-	// ul.appendChild(li);
 
 	i = 0;
 	while (i < list.length){
 		var li = document.createElement("li");
 		li.appendChild(document.createTextNode(list[i]));
-		li.classList.add("listItem");
+		li.classList.add("listItem"); // add class to list item
 		ul.appendChild(li);
 		i++;
 	}
 
+}
 
 
 
-	// // create button element
-	// var newButton = document.createElement("BUTTON");
-	// // create text node (create button text)
-	// var t = document.createTextNode("delete");
-	// // Append the text to <button> (allows button to have text)
-	// newButton.appendChild(t); 
-	// // assign class to new btn
-	// newButton.classList.add("deleter");
 
-	// // append button to list element
-	// li.appendChild(newButton);
+// clear list of combos
+function clearList(){
+	var listItemToDel = document.getElementsByClassName('listItem');
+	while(listItemToDel[0]) {
+    listItemToDel[0].parentNode.removeChild(listItemToDel[0]);
+    }
 
-	// append li to unordered list
-	// ul.appendChild(li);
+    listItemToDel = document.getElementsByClassName('entryCounter');
+	while(listItemToDel[0]) {
+    listItemToDel[0].parentNode.removeChild(listItemToDel[0]);
+    }
 
-	// reset form to blank value
-	// input.value="";
-	digit1a.value = "";
 }
 
 // reset form to blank value
 function clearForm(){
+	clearList();
 	digit1a.value = "";
 	digit2a.value = "";
 	digit3a.value = "";
@@ -274,25 +271,8 @@ function clearForm(){
 	digit5a.value = "";
 	digit6a.value = "";
 	digit7a.value = "";
+	cursor();
 }
-
-// NOT WORKING????
-// moves cursor to input box
-function cursor(){
-	// // digit1a.focus();
-	// digit1a.select();
-	// digit1a.focus({preventScroll:true});
-
-
-	//THISSSSS WORKS IF VAL ALREADY THERE IN BOX
-// document.getElementById('digit1').select()
-	document.getElementsByName("digit1")[0].select()
-	document.getElementsByName("digit1")[0].focus({preventScroll:true});
-	
-}
-
-
-
 
 // FUNCTION DECLARATION
 // when form submits, create list of letter combos from user entry 
@@ -317,7 +297,8 @@ function formSubmit() {
 
 	createListElement();
 
-	cursor();
+
+	// cursor();
 
 
 
@@ -325,9 +306,11 @@ function formSubmit() {
 
 
 
+
 // FUNCTION CALL
 // click submit button
 button.addEventListener("click", formSubmit);
+clearBtn.addEventListener("click", clearForm);
 
 
 
