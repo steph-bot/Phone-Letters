@@ -13,22 +13,22 @@
 /*---------------------------------------------------------------------------*\
   # CACHE SELECTORS
 \*---------------------------------------------------------------------------*/
-var digit1; // user entered digit #1
-var digit2; //					  #2
-var digit3; //					  #3
-var digit4; //					  #4
-var digit5; //					  #5
-var digit6; //					  #6
-var digit7; //					  #7
+// var digit1; // user entered digit #1
+// var digit2; //					  #2
+// var digit3; //					  #3
+// var digit4; //					  #4
+// var digit5; //					  #5
+// var digit6; //					  #6
+// var digit7; //					  #7
 
 // correct way
-	digit1a = document.getElementsByName("digit1")[0];
-	digit2a = document.getElementsByName("digit2")[0];
-	digit3a = document.getElementsByName("digit3")[0];
-	digit4a = document.getElementsByName("digit4")[0];
-	digit5a = document.getElementsByName("digit5")[0];
-	digit6a = document.getElementsByName("digit6")[0];
-	digit7a = document.getElementsByName("digit7")[0];
+var	digit1a = document.getElementsByName("digit1")[0]; // user entry digit #1
+var	digit2a = document.getElementsByName("digit2")[0]; //				   #2
+var	digit3a = document.getElementsByName("digit3")[0]; //				   #3
+var	digit4a = document.getElementsByName("digit4")[0]; //				   #4
+var	digit5a = document.getElementsByName("digit5")[0]; //				   #5
+var	digit6a = document.getElementsByName("digit6")[0]; //				   #6
+var	digit7a = document.getElementsByName("digit7")[0]; //				   #7
 
 
 var userEntry; // user entered phone number as a string ex: "3308004"
@@ -230,7 +230,7 @@ function createListElement(){
 	// create list element
 	var li = document.createElement("li");
 	// add text to list element (user input)
-	li.appendChild(document.createTextNode(userEntry.value));
+	li.appendChild(document.createTextNode(userEntry));
 
 	// // create button element
 	// var newButton = document.createElement("BUTTON");
@@ -248,7 +248,28 @@ function createListElement(){
 	ul.appendChild(li);
 
 	// reset form to blank value
-	input.value="";
+	// input.value="";
+	digit1a.value = "";
+}
+
+// reset form to blank value
+function clearForm(){
+	digit1a.value = "";
+	digit2a.value = "";
+	digit3a.value = "";
+	digit4a.value = "";
+	digit5a.value = "";
+	digit6a.value = "";
+	digit7a.value = "";
+}
+
+// NOT WORKING????
+// moves cursor to input box
+function cursor(){
+	// digit1a.focus();
+	digit1a.select();
+	digit1a.focus({preventScroll:true});
+	
 }
 
 
@@ -259,16 +280,34 @@ function createListElement(){
 // when form submits, create list of letter combos from user entry 
 function formSubmit() {
 
-	// cache value of each phone digit
-	digit1 = document.getElementsByName("digit1")[0].value;
-	digit2 = document.getElementsByName("digit2")[0].value;
-	digit3 = document.getElementsByName("digit3")[0].value;
-	digit4 = document.getElementsByName("digit4")[0].value;
-	digit5 = document.getElementsByName("digit5")[0].value;
-	digit6 = document.getElementsByName("digit6")[0].value;
-	digit7 = document.getElementsByName("digit7")[0].value;
-	userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
+	// // cache value of each phone digit
+	// digit1 = document.getElementsByName("digit1")[0].value;
+	// digit2 = document.getElementsByName("digit2")[0].value;
+	// digit3 = document.getElementsByName("digit3")[0].value;
+	// digit4 = document.getElementsByName("digit4")[0].value;
+	// digit5 = document.getElementsByName("digit5")[0].value;
+	// digit6 = document.getElementsByName("digit6")[0].value;
+	// digit7 = document.getElementsByName("digit7")[0].value;
+	// userEntry = digit1+digit2+digit3+digit4+digit5+digit6+digit7;
 	
+		// cache value of each phone digit
+	// digit1 = digit1a.value;
+	// digit2 = digit2a.value;
+	// digit3 = digit3a.value;
+	// digit4 = digit4a.value;
+	// digit5 = digit5a.value;
+	// digit6 = digit6a.value;
+	// digit7 = digit7a.value;
+	userEntry = digit1a.value
+	+digit2a.value
+	+digit3a.value
+	+digit4a.value
+	+digit5a.value
+	+digit6a.value
+	+digit7a.value;
+
+
+
 	// FUNCTION CALLS:
 	createArray2(userEntry); // new array is newUserArray2
 	numToLetters(newUserArray2); // new array is newUserArray
