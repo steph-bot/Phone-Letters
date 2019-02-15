@@ -55,5 +55,7 @@ ul {
 
 input[type=text] {
   padding: 0px 0px;
+  min-width: 25px;
+  /*max-width: 50px;*/
 }
 
