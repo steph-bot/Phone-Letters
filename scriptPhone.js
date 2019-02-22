@@ -3,13 +3,6 @@
 // - allows for submission with missing digits. leads to inaccurate results!
 //	 esp after a full number has been submitted, followed by an incomplete
 // 
-// - should i use:
-// - - " " 	blank spaces " " for zero
-// - - ""	leave out, using ""
-// - - "0"	ones and zeroes
-//
-// - add reference to original problem ask
-// 
 // - fix focus() situation
 
 
