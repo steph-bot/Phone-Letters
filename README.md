@@ -3,7 +3,6 @@
 https://steph-bot.github.io/Phone-Letters/
 
 To do list:
-- mobile responsive?
-- issues in js file
+- see js script file comments
 
 Initial Commit: Feb 7, 2019
