@@ -270,6 +270,7 @@ function clearForm(){
 // FUNCTION DECLARATION
 // when form submits, create list of letter combos from user entry 
 function formSubmit() {
+	clearList();
 
 	userEntry = digit1a.value + digit2a.value + digit3a.value
 			  + digit4a.value + digit5a.value + digit6a.value
