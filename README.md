@@ -17,8 +17,9 @@ Source: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 ## The Process
 
-- I thought it would take a few minutes to solve this problem in JavaScript but I was wrong :)
-- Fun fact: The phone number 999-9999 has 16,384 possible letter combos. 
+- I thought it would take a few minutes to solve this problem in JavaScript but I was wrong!
+- Fun fact: The phone number 999-9999 has 16,384 possible letter combinations
+- I was determined to figure out a working solution myself before checking the answer. My solution is not as elegant as the one provided by LeetCode, but now I know what to do next time
 
 
 
