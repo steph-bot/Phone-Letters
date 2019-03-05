@@ -10,6 +10,10 @@ This website was inspired by this LeetCode problem: https://leetcode.com/problem
 
 I thought it would take a few minutes to solve this problem but I was wrong :)
 
+If you want to embed images, this is how you do it:
+
+![Image of PhonePad](http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png)
+
 
 
 Initial Commit: Feb 7, 2019
