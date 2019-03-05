@@ -6,9 +6,9 @@ Fun fact: The phone number 999-9999 has 16,384 possible letter combos.
 
 https://steph-bot.github.io/Phone-Letters/
 
-Inspired by this LeetCode problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+This website was inspired by this LeetCode problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+I thought it would take a few minutes to solve this problem but I was wrong :)
 
-To do list:
-- see js script file comments
+
 
 Initial Commit: Feb 7, 2019
