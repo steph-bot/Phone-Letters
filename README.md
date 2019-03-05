@@ -7,7 +7,6 @@ https://steph-bot.github.io/Phone-Letters/
 
 This website was inspired by this LeetCode problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
-> Coffee. The finest organic suspension ever devised... I beat the Borg with it.
 > Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
 
 I thought it would take a few minutes to solve this problem but I was wrong :)
