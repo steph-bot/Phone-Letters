@@ -21,7 +21,7 @@ I thought it would take a few minutes to solve this problem in JavaScript but I 
 
 ## Fun Stuff
 
-Fun fact: The phone number 999-9999 has 16,384 possible letter combinations
+Fun fact: The phone number 999-9999 has 16,384 possible letter combinations. That's because the keypad number 9 has 4 letters, giving us 4^7 = 16,384.
 
 
 
