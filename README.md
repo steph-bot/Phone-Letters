@@ -5,9 +5,10 @@ Type in a phone number to determine all of the possible letter combinations for 
 
 https://steph-bot.github.io/Phone-Letters/
 
-This website was inspired by this LeetCode problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+This website was inspired by this LeetCode problem:
 
 > Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+> Source: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 I thought it would take a few minutes to solve this problem but I was wrong :)
 
