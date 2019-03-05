@@ -4,6 +4,7 @@ https://steph-bot.github.io/Phone-Letters/
 
 ## The Premise
 Enter a phone number to determine all of the possible letter combinations. 
+
 ![Image of PhonePad](http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png)
 
 ## Inspiration
