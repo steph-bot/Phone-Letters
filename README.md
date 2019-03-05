@@ -1,6 +1,6 @@
 # Phone Letters
 
-https://steph-bot.github.io/Phone-Letters/
+View the live site here: https://steph-bot.github.io/Phone-Letters/
 
 ## The Premise
 Enter a phone number to determine all of the possible letter combinations. 
